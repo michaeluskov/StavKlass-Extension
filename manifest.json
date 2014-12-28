@@ -6,7 +6,7 @@
 	 "content_scripts": [
     {
         "matches": ["http://vk.com/*", "https://vk.com/*"],
-        "js": ["stavklass.js"]
+        "js": ["jquery.js", "stavklass.js"]
     }
 ]
 }

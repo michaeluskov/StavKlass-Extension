@@ -1,1 +1,3 @@
-alert(2);
+$(window).load(function() {
+	alert(1);
+});
