@@ -1,0 +1,12 @@
+﻿{
+	"manifest_version": 2,
+	"name": "СТАВЬ КЛАСС!",
+	"version": "0.1",
+	
+	 "content_scripts": [
+    {
+        "matches": ["http://vk.com/*", "https://vk.com/*"],
+        "js": ["stavklass.js"]
+    }
+]
+}
