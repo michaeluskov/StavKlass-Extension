@@ -36,12 +36,19 @@ var KlassButtonsManager = function() {
 	
 	this.__klassButtons = {};
 	
+	this.__menuHasMore = function(menu) {
+		return $(menu).find('.add_media_more_node').length;
+	};
+	
 	KlassButtonsManager.prototype.handle = function() {
 		$('.add_media_menu').each(function (num, el) {
 			num = el.id.split('_')[3];
 			if (!(num in this.__klassButtons)) {
 				this.__klassButtons[num] = new KlassButton(this);
-				$(el).find('.add_media_items').append(this.__klassButtons[num].getButton());
+				if (!this.__menuHasMore(el))
+					$(el).find('.add_media_items').append(this.__klassButtons[num].getButton());
+				else
+					$(el).find('.add_media_more_node').append(this.__klassButtons[num].getButton());
 			}
 		}.bind(this));
 	
