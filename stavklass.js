@@ -1,23 +1,18 @@
-﻿var lastLocation = '';
-var checkChangeIntervalID = '';
-
-var addCommentButtons = function() {
-	var postButton = jQuery("<a class='add_media_type_1_komment add_media_item' " +
-									"style='background-image: url(http://vk.com/images/icons/attach_icons.png?6); " +
-									"background-position: 3px -152px;'><nobr>КОММЕНТ)))</nobr></a>");
-	jQuery(".add_media_more_node").append(postButton);
-};
-
-var checkIfLocationChanged = function() {
-	var newLocation = document.location.pathname;
-	var isChanged = (newLocation !== lastLocation);
-	lastLocation = newLocation;
-	return isChanged;
+﻿var addCommentButtons = function() {
+	jQuery(".add_media_menu").each(function(num, el) {
+		var num = el.id.split('_')[3];
+		if (!jQuery("#add_media_item_"+num+"_komment").length) {
+			var button = jQuery('<a class="add_media_item"	\
+								style="background-image: url(http://vk.com/images/icons/attach_icons.png?6);  \
+								background-position: 3px 3px;"><nobr>СМЕШНОЙ КОММЕНТ)))</nobr></a>');
+			jQuery(button).attr('id', "add_media_item_"+num+"_komment");
+			jQuery(el).find('.add_media_items').append(button);
+		}
+	});
 };
 
 jQuery(window).load(function() {
-	setInterval(function() {
-		if (checkIfLocationChanged())
+	checkChangeIntervalID = setInterval(function() {
 			addCommentButtons();
-	}, 500);
+	}, 2000);
 });
