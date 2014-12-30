@@ -1,4 +1,5 @@
-﻿var $  = jQuery;
+﻿var old$ = $;
+var $  = jQuery;
 
 var KlassMutationObserver = function(buttonsManager) {
 	this.__buttonsManager = buttonsManager;
@@ -34,6 +35,7 @@ var KlassButton = function(menuSelectHandler) {
 					
 	this.__buttonClick = function() {
 		console.log(this.__menuSelectHandler.getState());
+		this.__menuSelectHandler.getState().setPicFunction('http://cs14102.vk.me/c624023/v624023334/9c31/YJJvMSNZREU.jpg');
 	};
 								
 								
@@ -114,8 +116,9 @@ var MenuSelectHandler = function() {
 			this.__state = {type: 'pagepost'};
 			this.__state.setPicFunction = function(url) {
 				var old = $('#post_field').val();
-				$('#post_field').val(old+' '+url);
-			};
+				$('#post_field').val(old+' '+url+' ');
+				Wall.onPostValChange();
+			}.bind(this);
 		}.bind(this),
 		comment: function(el) {
 			this.__state = {type: 'comment'};
@@ -147,6 +150,7 @@ var init = function() {
 	var menuSelectHandler = new MenuSelectHandler();
 	var buttonsManager = new KlassButtonsManager(menuSelectHandler);
 	var buttonsObserver = new KlassMutationObserver(buttonsManager);
+	buttonsManager.handle();
 	buttonsObserver.start();
 	var attachObserver = new AttachMenuObserver(menuSelectHandler);
 	attachObserver.setEventHandlers(document);
@@ -156,3 +160,5 @@ var init = function() {
 jQuery(window).load(function() {
 	init();
 });
+
+var $ = old$;

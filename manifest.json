@@ -6,7 +6,9 @@
 	 "content_scripts": [
     {
         "matches": ["http://vk.com/*", "https://vk.com/*"],
-        "js": ["jquery.js", "stavklass.js"]
+        "js": ["stavklass-injector.js"]
     }
-]
+	],
+	
+	"web_accessible_resources": ["jquery.js", "stavklass.js"]
 }
