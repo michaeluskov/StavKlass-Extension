@@ -23,11 +23,18 @@ var KlassMutationObserver = function(buttonsManager) {
 	
 };
 
-var KlassButton = function() {
+var KlassButton = function(menuSelectHandler) {
+
+	this.__menuSelectHandler = menuSelectHandler;
 	
 	this.__button = $('<a class="add_media_item"	\
 								style="background-image: url(http://vk.com/images/icons/attach_icons.png?6);  \
-								background-position: 3px 3px;"><nobr>СТАВЬ КЛАСС)))</nobr></a>');
+								background-position: 3px 3px;"><nobr>СТАВЬ КЛАСС)))</nobr></a>')
+					.click(function() {this.__buttonClick()}.bind(this));
+					
+	this.__buttonClick = function() {
+		console.log(this.__menuSelectHandler.getState());
+	};
 								
 								
 	KlassButton.prototype.getButton = function() {
@@ -36,8 +43,9 @@ var KlassButton = function() {
 	
 };
 
-var KlassButtonsManager = function() {
-	
+var KlassButtonsManager = function(menuSelectHandler) {
+
+	this.__menuSelectHandler = menuSelectHandler;	
 	this.__klassButtons = {};
 	
 	this.__menuHasMore = function(menu) {
@@ -48,7 +56,7 @@ var KlassButtonsManager = function() {
 		$('.add_media_menu').each(function (num, el) {
 			num = el.id.split('_')[3];
 			if (!(num in this.__klassButtons)) {
-				this.__klassButtons[num] = new KlassButton(this);
+				this.__klassButtons[num] = new KlassButton(this.__menuSelectHandler);
 				if (!this.__menuHasMore(el))
 					$(el).find('.add_media_items').append(this.__klassButtons[num].getButton());
 				else
@@ -126,7 +134,6 @@ var MenuSelectHandler = function() {
 		var type = this.getElementType(el);
 		if (!type) return;
 		this.__stateSetters[type](el);
-		console.log(this.getState());
 	}.bind(this);
 	
 	MenuSelectHandler.prototype.getState = function() {
@@ -137,10 +144,10 @@ var MenuSelectHandler = function() {
 
 
 var init = function() {
-	var buttonsManager = new KlassButtonsManager();
+	var menuSelectHandler = new MenuSelectHandler();
+	var buttonsManager = new KlassButtonsManager(menuSelectHandler);
 	var buttonsObserver = new KlassMutationObserver(buttonsManager);
 	buttonsObserver.start();
-	var menuSelectHandler = new MenuSelectHandler();
 	var attachObserver = new AttachMenuObserver(menuSelectHandler);
 	attachObserver.setEventHandlers(document);
 	attachObserver.start();
