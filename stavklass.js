@@ -1,5 +1,4 @@
-﻿var old$ = $;
-var $  = jQuery;
+﻿var $  = jQuery;
 
 var KlassMutationObserver = function(buttonsManager) {
 	this.__buttonsManager = buttonsManager;
@@ -117,7 +116,8 @@ var MenuSelectHandler = function() {
 			this.__state.setPicFunction = function(url) {
 				var old = $('#post_field').val();
 				$('#post_field').val(old+' '+url+' ');
-				Wall.onPostValChange();
+				$('#post_field').focus();
+				Wall.onPostValChange(url, 1);
 			}.bind(this);
 		}.bind(this),
 		comment: function(el) {
@@ -161,4 +161,3 @@ jQuery(window).load(function() {
 	init();
 });
 
-var $ = old$;
