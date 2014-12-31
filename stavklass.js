@@ -122,6 +122,16 @@ var MenuSelectHandler = function() {
 		}.bind(this),
 		comment: function(el) {
 			this.__state = {type: 'comment'};
+			this.__state.setPicFunction = function(url) {
+				var matches = /reply_media_lnk(.+)/.exec(el.id);
+				var replyID = matches[1];
+				var inputElement = $('#reply_field'+replyID);
+				var old = inputElement.html();
+				inputElement.html(old+' '+url+' ');
+				Wall.showEditReply(replyID);
+				var event = $.Event('keyup');
+				inputElement.trigger(event);
+			}.bind(this);
 		}.bind(this)
 	};
 
