@@ -34,7 +34,7 @@ var KlassButton = function(menuSelectHandler) {
 					
 	this.__buttonClick = function() {
 		console.log(this.__menuSelectHandler.getState());
-		this.__menuSelectHandler.getState().setPicFunction('http://cs14102.vk.me/c624023/v624023334/9c31/YJJvMSNZREU.jpg');
+		this.__menuSelectHandler.getState().setPicFunction('http://std3.ru/4d/97/1412355420-4d979ffc67d84cba42d256769b87410e.jpg');
 	};
 								
 								
