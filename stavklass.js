@@ -139,6 +139,16 @@ var MenuSelectHandler = function() {
 				inputElement.focus();
 				inputElement[0].dispatchEvent(new Event('keyup'));
 			}.bind(this);
+		}.bind(this),
+		im: function(el) {
+			this.__state = {type: 'im'};
+			this.__state.setPicFunction = function(url) {
+				var inputElement = $('.im_editable:visible');
+				var old = inputElement.html();
+				inputElement.html(old+' '+url+'&nbsp;');
+				inputElement.focus();
+				inputElement[0].dispatchEvent(new Event('keyup'));
+			}
 		}.bind(this)
 	};
 
