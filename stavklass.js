@@ -117,6 +117,9 @@ var MenuSelectHandler = function() {
 		},
 		photo: function(el) {
 			return $(el).attr('id') == 'pv_add_media';
+		},
+		video: function(el) {
+			return $(el).attr('id') == 'mv_add_media';
 		}
 	};
 	
@@ -157,6 +160,16 @@ var MenuSelectHandler = function() {
 			this.__state = {type: 'photo'};
 			this.__state.setPicFunction = function(url) {
 				var inputElement = $('#pv_comment');
+				var old = inputElement.html();
+				inputElement.html(old+' '+url+'&nbsp;');
+				inputElement.focus();
+				inputElement[0].dispatchEvent(new Event('keyup'));
+			}
+		}.bind(this),
+		video: function(el) {
+			this.__state = {type: 'photo'};
+			this.__state.setPicFunction = function(url) {
+				var inputElement = $('#mv_comment');
 				var old = inputElement.html();
 				inputElement.html(old+' '+url+'&nbsp;');
 				inputElement.focus();
