@@ -106,8 +106,12 @@ var MenuSelectHandler = function() {
 	this.__state = {};
 
 	this.__typeCheckers = {
-		pagepost: function(el) {return $(el).attr('id') == 'page_add_media'},
-		comment: function(el) {return $(el).hasClass('reply_media_lnk')}
+		pagepost: function(el) {
+			return $(el).attr('id') == 'page_add_media'
+		},
+		comment: function(el) {
+			return $(el).attr('id') && $(el).attr('id').indexOf('reply_media_lnk') == 0
+		}
 	};
 	
 	this.__stateSetters = {
