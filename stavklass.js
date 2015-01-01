@@ -107,10 +107,13 @@ var MenuSelectHandler = function() {
 
 	this.__typeCheckers = {
 		pagepost: function(el) {
-			return $(el).attr('id') == 'page_add_media'
+			return $(el).attr('id') == 'page_add_media';
 		},
 		comment: function(el) {
-			return $(el).attr('id') && $(el).attr('id').indexOf('reply_media_lnk') == 0
+			return $(el).attr('id') && $(el).attr('id').indexOf('reply_media_lnk') == 0;
+		},
+		im: function(el) {
+			return $(el).attr('id') == 'im_add_media';
 		}
 	};
 	
