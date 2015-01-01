@@ -199,7 +199,7 @@ var MenuSelectHandler = function() {
 };
 
 
-var init = function() {
+var initAfterLoad = function() {
 	var menuSelectHandler = new MenuSelectHandler();
 	var buttonsManager = new KlassButtonsManager(menuSelectHandler);
 	var buttonsObserver = new KlassMutationObserver(buttonsManager);
@@ -211,6 +211,6 @@ var init = function() {
 };
 
 jQuery(window).load(function() {
-	init();
+	initAfterLoad();
 });
 
