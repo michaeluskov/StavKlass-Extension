@@ -127,10 +127,10 @@ var MenuSelectHandler = function() {
 				var replyID = matches[1];
 				var inputElement = $('#reply_field'+replyID);
 				var old = inputElement.html();
-				inputElement.html(old+' '+url+' ');
+				inputElement.html(old+' '+url+'&nbsp;');
 				Wall.showEditReply(replyID);
-				var event = $.Event('keyup');
-				inputElement.trigger(event);
+				inputElement.focus();
+				inputElement[0].dispatchEvent(new Event('keyup'));
 			}.bind(this);
 		}.bind(this)
 	};
