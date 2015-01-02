@@ -5,4 +5,4 @@ function addScript(url) {
 }
 
 addScript('jquery.js');
-addScript('stavklass.js');
+addScript('vk.js');

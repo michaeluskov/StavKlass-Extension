@@ -10,5 +10,5 @@
     }
 	],
 	
-	"web_accessible_resources": ["jquery.js", "stavklass.js"]
+	"web_accessible_resources": ["jquery.js", "vk.js"]
 }
