@@ -1,4 +1,4 @@
-﻿var $  = jQuery;
+﻿var $ = jQuery;
 
 var KlassMutationObserver = function(buttonsManager) {
 	this.__buttonsManager = buttonsManager;
