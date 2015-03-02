@@ -34,7 +34,8 @@ var KlassButton = function(menuSelectHandler) {
 					
 	this.__buttonClick = function() {
 		console.log(this.__menuSelectHandler.getState());
-		var stavklassobject = new StavKlassObject(this.__menuSelectHandler.getState().setPicFunction);
+		var stavklassobject = new StavKlassObject(this.__menuSelectHandler.getState().setPicFunction,
+												  function() {$('#stavklassobject').remove()});
 		stavklassobject.createNodes();
 		$(document.body).append(stavklassobject.getRootNode());
 	};
