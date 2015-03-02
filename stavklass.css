@@ -6,6 +6,7 @@
 	width: 100%;
 	z-index: 1000;	
 	background: url('opacity.png');
+	cursor: pointer;
 }
 
 .stavklass-container {
@@ -18,5 +19,4 @@
 	width: 700px;
 	height: 90%;
 	margin: auto;
-}
-
+};
