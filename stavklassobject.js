@@ -16,6 +16,6 @@ var StavKlassObject = function(successFunction, rejectFunction) {
 	
 	StavKlassObject.prototype.getRootNode = function() {
 		return this.__rootNode;
-	}
+	};
 
 };
