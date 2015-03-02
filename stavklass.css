@@ -1,11 +1,17 @@
 .stavklass-opacity {
-	opacity: 0.5;
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
 	z-index: 1000;	
-	background: #000000;
+	background: url('opacity.png');
 }
 
+.stavklass-container {
+	background: #FFFFFF;
+	position: absolute;
+	width: 700px;
+	height: 300px;
+	margin: 0 auto;
+}
