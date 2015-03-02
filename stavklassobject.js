@@ -6,7 +6,10 @@ var StavKlassObject = function(successFunction, rejectFunction) {
 	
 	StavKlassObject.prototype.createNodes = function() {
 		var container = $('<div>')
-								.addClass('stavklass-container');
+								.addClass('stavklass-container')
+								.click(function(e) {
+									e.stopPropagation();
+									});
 		var opacityScreen = $('<div>')
 								.addClass('stavklass-opacity')
 								.append(container);
