@@ -5,8 +5,11 @@ var StavKlassObject = function(successFunction, rejectFunction) {
 	this.__rootNode = undefined;
 	
 	StavKlassObject.prototype.createNodes = function() {
+		var container = $('<div>')
+								.addClass('stavklass-container');
 		var opacityScreen = $('<div>')
-								.addClass('stavklass-opacity');
+								.addClass('stavklass-opacity')
+								.append(container);
 		this.__rootNode = $('<div>')
 							.attr('id', 'stavklassobject')
 							.addClass('stavklass-root')
