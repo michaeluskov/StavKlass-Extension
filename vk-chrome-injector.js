@@ -5,4 +5,5 @@ function addScript(url) {
 }
 
 addScript('jquery.js');
+addScript('stavklassobject.js');
 addScript('vk.js');
