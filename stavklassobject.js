@@ -1,4 +1,4 @@
-var StavKlassObject = function(successFunction, rejectFunction) {
+Ôªøvar StavKlassObject = function(successFunction, rejectFunction) {
 	
 	this.__successFunction = successFunction || function() {};
 	this.__rejectFunction = rejectFunction || function() {};
@@ -13,11 +13,11 @@ var StavKlassObject = function(successFunction, rejectFunction) {
 		var searchField = $('<input type="text">')
 							.attr('id', 'stavklass-searchfield')
 							.addClass('stavklass-searchfield')
-							.attr('placeholder', '¬¬≈ƒ» “≈ —“))))))');
+							.attr('placeholder', '–í–í–ï–î–ò –¢–ï–ö–°–¢))))))');
 		var searchButton = $('<button>')
 							.attr('id', 'stavklass-searchbutton')
 							.addClass('stavklass-searchbutton')
-							.html('Õ¿…“»)))');
+							.html('–ù–ê–ô–¢–ò)))');
 		container.append(searchField, searchButton);
 		var opacityScreen = $('<div>')
 								.addClass('stavklass-opacity')
