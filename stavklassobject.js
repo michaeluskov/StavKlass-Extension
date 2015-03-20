@@ -18,7 +18,10 @@
 							.attr('id', 'stavklass-searchbutton')
 							.addClass('stavklass-searchbutton')
 							.html('НАЙТИ)))');
-		container.append(searchField, searchButton);
+		var imagesContainer = $('<div>')
+								.attr('id', 'stavklass-imagescontainer')
+								.addClass('stavklass-imagescontainer');
+		container.append(searchField, searchButton, imagesContainer);
 		var opacityScreen = $('<div>')
 								.addClass('stavklass-opacity')
 								.append(container);
