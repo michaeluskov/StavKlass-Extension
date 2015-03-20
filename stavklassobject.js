@@ -10,6 +10,15 @@ var StavKlassObject = function(successFunction, rejectFunction) {
 								.click(function(e) {
 									e.stopPropagation();
 									});
+		var searchField = $('<input type="text">')
+							.attr('id', 'stavklass-searchfield')
+							.addClass('stavklass-searchfield')
+							.attr('placeholder', 'ббедх рейяр))))))');
+		var searchButton = $('<button>')
+							.attr('id', 'stavklass-searchbutton')
+							.addClass('stavklass-searchbutton')
+							.html('мюирх)))');
+		container.append(searchField, searchButton);
 		var opacityScreen = $('<div>')
 								.addClass('stavklass-opacity')
 								.append(container);

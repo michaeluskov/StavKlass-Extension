@@ -13,6 +13,8 @@
 	background: #FFFFFF;
 	position: absolute;
 	overflow: auto;
+	padding: 10px;
+	text-align: center;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -22,4 +24,19 @@
 	margin: auto;
 	cursor: default;
 	border-radius: 10px;
-};
+}
+
+.stavklass-searchfield {
+	width: 40%;
+	line-height: 20px;
+	padding: 10px;
+}
+
+.stavklass-searchbutton {
+	line-height: 20px;
+	padding: 10px;
+	margin-left: 7px;
+	margin-right: 7px;
+	background: #f0f0f0;
+	border: solid 1px #505050;
+}
