@@ -12,6 +12,7 @@ function addStylesheet(url) {
 }
 
 addScript('jquery.js');
+addScript('typeahead.js');
 addScript('stavklassobject.js');
 addScript('vk.js');
 addStylesheet('stavklass.css');
