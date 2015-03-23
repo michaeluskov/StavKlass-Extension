@@ -13,7 +13,14 @@
 		var searchField = $('<input type="text">')
 							.attr('id', 'stavklass-searchfield')
 							.addClass('stavklass-searchfield')
-							.attr('placeholder', 'ВВЕДИ ТЕКСТ))))))');
+							.attr('placeholder', 'ВВЕДИ ТЕКСТ))))))')
+							.autocomplete({
+								serviceUrl: 'http://stavklass.ru/images/autocomplete.json',
+								paramName: 'term',
+								transformResult: function(r) {
+									return {suggestions: JSON.parse(r)};
+								}
+							});
 		var searchButton = $('<button>')
 							.attr('id', 'stavklass-searchbutton')
 							.addClass('stavklass-searchbutton')
