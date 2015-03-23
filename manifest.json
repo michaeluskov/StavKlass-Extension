@@ -10,5 +10,5 @@
     }
 	],
 	
-	"web_accessible_resources": ["jquery.js", "stavklassobject.js", "stavklass.css", "opacity.png", "vk.js"]
+	"web_accessible_resources": ["jquery.js", "autocomplete.js", "stavklassobject.js", "stavklass.css", "opacity.png", "vk.js"]
 }
