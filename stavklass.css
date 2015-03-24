@@ -44,3 +44,20 @@
 .stavklass-imagescontainer {
 	padding-top: 10px;
 }
+
+.autocomplete-suggestions {
+	border: solid 1px;
+	padding: 4px;
+	margin-top: 5px;
+}
+
+.autocomplete-suggestion {
+	padding: 3px;
+	margin: 0px 3px;
+}
+
+.autocomplete-selected {
+	background: blue;
+	color: white;
+	padding: 3px;
+}
