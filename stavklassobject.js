@@ -22,11 +22,20 @@
 								transformResult: function(r) {
 									return {suggestions: JSON.parse(r)};
 								}
-							});
+							})
+							.on('keydown', function(e) {
+								if (e.which == 13) {
+									e.preventDefault();
+									this.__setSearchedImages($(this.__rootNode).find('#stavklass-searchfield').val());
+								}
+							}.bind(this));
 		var searchButton = $('<button>')
 							.attr('id', 'stavklass-searchbutton')
 							.addClass('stavklass-button stavklass-searchbutton')
-							.html('НАЙТИ)))');
+							.html('НАЙТИ)))').
+							click(function() {
+								this.__setSearchedImages($(this.__rootNode).find('#stavklass-searchfield').val());
+							}.bind(this));
 		var dateButton = $('<button>')
 							.attr('id', 'stavklass-datebutton')
 							.addClass('stavklass-button')
@@ -52,6 +61,16 @@
 	StavKlassObject.prototype.getRootNode = function() {
 		return this.__rootNode;
 	};
+	
+	StavKlassObject.prototype.__setSearchedImages = function(query) {
+		$.getJSON('http://stavklass.ru/images/search.json',
+				 {'image[text]': query},
+				 function(data) {
+					this.__images = data;
+					this.__updateImages();
+				 }.bind(this)
+				 );
+	}
 	
 	StavKlassObject.prototype.__updateImages = function() {
 		var container = $(this.__rootNode).find('#stavklass-imagescontainer');
