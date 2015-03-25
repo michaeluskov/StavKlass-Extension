@@ -102,14 +102,17 @@
 		var container = $(this.__rootNode).find('#stavklass-imagescontainer');
 		container.html('');
 		$.map(this.__images, function(el, num) {
-			var imageDiv = $('<div>');
+			var imageDiv = $('<div>')
+							.addClass('stavklass-imagerow');
 			var image = $('<img>')
+						.addClass('stavklass-image')
 						.attr('src',el.link)
 						.click(function() {
 							this.__successFunction(el.link);
 							this.__closeFunction();
 						}.bind(this));
 			var rating = $('<span>')
+							.addClass('stavklass-rating')
 							.html('Рейтинг: ' + el.rating);
 			imageDiv.append(image, rating);
 			container.append(imageDiv);
