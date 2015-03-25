@@ -38,10 +38,15 @@
 	margin-left: 7px;
 	margin-right: 7px;
 	border: solid 1px #505050;
+	background: #ffffff;
 }
 
 .stavklass-searchbutton {
 	background: #f0f0f0;
+}
+
+.stavklass-activebutton {
+	background: #404040;
 }
 
 .stavklass-imagescontainer {
