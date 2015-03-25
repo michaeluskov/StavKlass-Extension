@@ -4,6 +4,8 @@
 	this.__rejectFunction = rejectFunction || function() {};
 	this.__rootNode = undefined;
 	
+	this.__images = [];
+	
 	StavKlassObject.prototype.createNodes = function() {
 		var container = $('<div>')
 								.addClass('stavklass-container')
@@ -49,6 +51,20 @@
 	
 	StavKlassObject.prototype.getRootNode = function() {
 		return this.__rootNode;
+	};
+	
+	StavKlassObject.prototype.__updateImages = function() {
+		var container = $(this.__rootNode).find('#stavklass-imagescontainer');
+		container.html('');
+		$.map(this.__images, function(el, num) {
+			var imageDiv = $('<div>');
+			var image = $('<img>')
+						.attr('src',el.link);
+			var rating = $('<span>')
+							.html('Рейтинг: ' + el.rating);
+			imageDiv.append(image, rating);
+			container.append(imageDiv);
+		}.bind(this));
 	};
 
 };
