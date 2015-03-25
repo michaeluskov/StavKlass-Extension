@@ -25,10 +25,18 @@
 							.attr('id', 'stavklass-searchbutton')
 							.addClass('stavklass-button stavklass-searchbutton')
 							.html('НАЙТИ)))');
+		var dateButton = $('<button>')
+							.attr('id', 'stavklass-datebutton')
+							.addClass('stavklass-button')
+							.html('Самые новые');
+		var ratingButton = $('<button>')
+							.attr('id', 'stavklass-ratingbutton')
+							.addClass('stavklass-button')
+							.html('Самые рейтинговые');
 		var imagesContainer = $('<div>')
 								.attr('id', 'stavklass-imagescontainer')
 								.addClass('stavklass-imagescontainer');
-		container.append(searchField, searchButton, imagesContainer);
+		container.append(searchField, searchButton, $('<p />'), dateButton, ratingButton, imagesContainer);
 		var opacityScreen = $('<div>')
 								.addClass('stavklass-opacity')
 								.append(container);
