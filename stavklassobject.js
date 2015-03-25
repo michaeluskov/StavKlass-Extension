@@ -21,7 +21,10 @@
 								paramName: 'term',
 								transformResult: function(r) {
 									return {suggestions: JSON.parse(r)};
-								}
+								},
+								onSelect: function(e) {
+									this.__setSearchedImages($(this.__rootNode).find('#stavklass-searchfield').val());
+								}.bind(this)
 							})
 							.on('keydown', function(e) {
 								if (e.which == 13) {
