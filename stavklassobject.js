@@ -1,7 +1,7 @@
-﻿var StavKlassObject = function(successFunction, rejectFunction) {
+﻿var StavKlassObject = function(successFunction, closeFunction) {
 	
 	this.__successFunction = successFunction || function() {};
-	this.__rejectFunction = rejectFunction || function() {};
+	this.__closeFunction = closeFunction || function() {};
 	this.__rootNode = undefined;
 	
 	this.__images = [];
@@ -60,7 +60,7 @@
 							.attr('id', 'stavklassobject')
 							.addClass('stavklass-root')
 							.append(opacityScreen)
-							.click(function() {this.__rejectFunction()}.bind(this));
+							.click(function() {this.__closeFunction()}.bind(this));
 	};
 	
 	StavKlassObject.prototype.getRootNode = function() {
@@ -104,7 +104,11 @@
 		$.map(this.__images, function(el, num) {
 			var imageDiv = $('<div>');
 			var image = $('<img>')
-						.attr('src',el.link);
+						.attr('src',el.link)
+						.click(function() {
+							this.__successFunction(el.link);
+							this.__closeFunction();
+						}.bind(this));
 			var rating = $('<span>')
 							.html('Рейтинг: ' + el.rating);
 			imageDiv.append(image, rating);
