@@ -32,13 +32,16 @@
 	padding: 10px;
 }
 
-.stavklass-searchbutton {
+.stavklass-button {
 	line-height: 20px;
 	padding: 10px;
 	margin-left: 7px;
 	margin-right: 7px;
-	background: #f0f0f0;
 	border: solid 1px #505050;
+}
+
+.stavklass-searchbutton {
+	background: #f0f0f0;
 }
 
 .stavklass-imagescontainer {
@@ -55,6 +58,7 @@
 	padding: 3px;
 	margin: 0px 3px;
 }
+
 
 .autocomplete-selected {
 	background: blue;

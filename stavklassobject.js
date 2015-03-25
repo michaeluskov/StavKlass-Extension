@@ -23,7 +23,7 @@
 							});
 		var searchButton = $('<button>')
 							.attr('id', 'stavklass-searchbutton')
-							.addClass('stavklass-searchbutton')
+							.addClass('stavklass-button stavklass-searchbutton')
 							.html('НАЙТИ)))');
 		var imagesContainer = $('<div>')
 								.attr('id', 'stavklass-imagescontainer')
