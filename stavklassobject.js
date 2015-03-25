@@ -42,11 +42,13 @@
 		var dateButton = $('<button>')
 							.attr('id', 'stavklass-datebutton')
 							.addClass('stavklass-button')
-							.html('Самые новые');
+							.html('Самые новые')
+							.click(this.__setLatestImages.bind(this));
 		var ratingButton = $('<button>')
 							.attr('id', 'stavklass-ratingbutton')
 							.addClass('stavklass-button')
-							.html('Самые рейтинговые');
+							.html('Самые рейтинговые')
+							.click(this.__setHighestRankedImages.bind(this));
 		var imagesContainer = $('<div>')
 								.attr('id', 'stavklass-imagescontainer')
 								.addClass('stavklass-imagescontainer');
@@ -65,6 +67,7 @@
 		return this.__rootNode;
 	};
 	
+	
 	StavKlassObject.prototype.__setSearchedImages = function(query) {
 		$.getJSON('http://stavklass.ru/images/search.json',
 				 {'image[text]': query},
@@ -74,6 +77,26 @@
 				 }.bind(this)
 				 );
 	}
+	
+	StavKlassObject.prototype.__setLatestImages = function() {
+		$.getJSON('http://stavklass.ru/images.json',
+				 {order: 'date'},
+				 function(data) {
+					this.__images = data;
+					this.__updateImages();
+				 }.bind(this)
+				 );
+	};
+	
+	StavKlassObject.prototype.__setHighestRankedImages = function() {
+		$.getJSON('http://stavklass.ru/images.json',
+				 {order: 'rating'},
+				 function(data) {
+					this.__images = data;
+					this.__updateImages();
+				 }.bind(this)
+				 );
+	};
 	
 	StavKlassObject.prototype.__updateImages = function() {
 		var container = $(this.__rootNode).find('#stavklass-imagescontainer');
