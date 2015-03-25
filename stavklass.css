@@ -12,7 +12,6 @@
 .stavklass-container {
 	background: #FFFFFF;
 	position: absolute;
-	overflow: auto;
 	padding: 10px;
 	text-align: center;
 	top: 0;
@@ -24,6 +23,7 @@
 	margin: auto;
 	cursor: default;
 	border-radius: 10px;
+	overflow: auto;
 }
 
 .stavklass-searchfield {
@@ -57,6 +57,7 @@
 	border: solid 1px;
 	padding: 4px;
 	margin-top: 5px;
+	background: #ffffff;
 }
 
 .autocomplete-suggestion {
