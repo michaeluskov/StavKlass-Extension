@@ -65,6 +65,7 @@
 	padding: 4px;
 	margin-top: 5px;
 	background: #ffffff;
+	overflow: hidden;
 }
 
 .autocomplete-suggestion {
@@ -81,4 +82,9 @@
 
 .stavklass-image {
 	cursor: pointer;
+	width: 50%;
+}
+
+.stavklass-rating {
+	margin-left: 5px;
 }
