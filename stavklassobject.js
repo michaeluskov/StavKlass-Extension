@@ -17,7 +17,7 @@
 							.addClass('stavklass-searchfield')
 							.attr('placeholder', 'ВВЕДИ ТЕКСТ))))))')
 							.autocomplete({
-								serviceUrl: 'http://stavklass.ru/images/autocomplete.json',
+								serviceUrl: 'https://stavklass.ru/images/autocomplete.json',
 								paramName: 'term',
 								transformResult: function(r) {
 									return {suggestions: JSON.parse(r)};
@@ -69,7 +69,7 @@
 	
 	
 	StavKlassObject.prototype.__setSearchedImages = function(query) {
-		$.getJSON('http://stavklass.ru/images/search.json',
+		$.getJSON('https://stavklass.ru/images/search.json',
 				 {'image[text]': query},
 				 function(data) {
 					this.__images = data;
@@ -79,7 +79,7 @@
 	}
 	
 	StavKlassObject.prototype.__setLatestImages = function() {
-		$.getJSON('http://stavklass.ru/images.json',
+		$.getJSON('https://stavklass.ru/images.json',
 				 {order: 'date'},
 				 function(data) {
 					this.__images = data;
@@ -89,7 +89,7 @@
 	};
 	
 	StavKlassObject.prototype.__setHighestRankedImages = function() {
-		$.getJSON('http://stavklass.ru/images.json',
+		$.getJSON('https://stavklass.ru/images.json',
 				 {order: 'rating'},
 				 function(data) {
 					this.__images = data;
