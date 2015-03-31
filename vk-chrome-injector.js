@@ -6,7 +6,7 @@ function addScript(url) {
 
 function addScriptIfJquery(url) {
 	if (typeof jQuery === undefined)
-		setTimeout(function() {addScriptIfJquery(url), 100};
+		setTimeout(function() {addScriptIfJquery(url)}, 100);
 	else
 		addScript(url);
 }
@@ -20,6 +20,7 @@ function addStylesheet(url) {
 
 addScript('jquery.js');
 addScriptIfJquery('autocomplete.js');
+addScriptIfJquery('scrollock.js');
 addScriptIfJquery('stavklassobject.js');
 addScriptIfJquery('vk.js');
 addStylesheet('stavklass.css');

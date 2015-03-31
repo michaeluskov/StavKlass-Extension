@@ -54,11 +54,14 @@
 							.click(this.__setHighestRankedImages.bind(this));
 		var imagesContainer = $('<div>')
 								.attr('id', 'stavklass-imagescontainer')
-								.addClass('stavklass-imagescontainer');
+								.addClass('stavklass-imagescontainer')
+								.scrollLock()
+								.on('mousewheel', function(e) {e.stopPropagation()});
 		relativeContainer.append(searchField, searchButton, $('<p />'), dateButton, ratingButton, imagesContainer);
 		var opacityScreen = $('<div>')
 								.addClass('stavklass-opacity')
-								.append(container);
+								.append(container)
+								.scrollLock();
 		this.__rootNode = $('<div>')
 							.attr('id', 'stavklassobject')
 							.addClass('stavklass-root')
