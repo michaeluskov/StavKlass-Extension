@@ -71,32 +71,48 @@
 	};
 	
 	
+	StavKlassObject.prototype.__enableLoading = function() {
+		var opacity = $('<div>').addClass('stavklass-loadingopacity');
+		var progress = $('<div>').addClass('stavklass-loadingprogress');
+		$(this.__rootNode).find('.stavklass-relativecontainer').append(opacity, progress);
+	};
+	
+	StavKlassObject.prototype.__disableLoading = function() {
+		$(this.__rootNode).find('.stavklass-loadingopacity, .stavklass-loadingprogress').remove();
+	};
+	
 	StavKlassObject.prototype.__setSearchedImages = function(query) {
+		this.__enableLoading();
 		$.getJSON('https://stavklass.ru/images/search.json',
 				 {'image[text]': query},
 				 function(data) {
 					this.__images = data;
 					this.__updateImages();
+					this.__disableLoading();
 				 }.bind(this)
 				 );
 	}
 	
 	StavKlassObject.prototype.__setLatestImages = function() {
+		this.__enableLoading();
 		$.getJSON('https://stavklass.ru/images.json',
 				 {order: 'date'},
 				 function(data) {
 					this.__images = data;
 					this.__updateImages();
+					this.__disableLoading();
 				 }.bind(this)
 				 );
 	};
 	
 	StavKlassObject.prototype.__setHighestRankedImages = function() {
+		this.__enableLoading();
 		$.getJSON('https://stavklass.ru/images.json',
 				 {order: 'rating'},
 				 function(data) {
 					this.__images = data;
 					this.__updateImages();
+					this.__disableLoading();
 				 }.bind(this)
 				 );
 	};

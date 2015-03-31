@@ -105,5 +105,8 @@
 	right: 0;
 	bottom: 0;
 	margin: auto;
+	height: 80px;
+	width: 80px;
 	background: url(loading.gif);
+	background-repeat: no-repeat;
 }
