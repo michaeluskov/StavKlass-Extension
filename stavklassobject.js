@@ -11,7 +11,10 @@
 								.addClass('stavklass-container')
 								.click(function(e) {
 									e.stopPropagation();
-									});
+								});
+		var relativeContainer = $('<div>')
+								.addClass('stavklass-relativecontainer');
+		container.append(relativeContainer);
 		var searchField = $('<input type="text">')
 							.attr('id', 'stavklass-searchfield')
 							.addClass('stavklass-searchfield')
@@ -52,7 +55,7 @@
 		var imagesContainer = $('<div>')
 								.attr('id', 'stavklass-imagescontainer')
 								.addClass('stavklass-imagescontainer');
-		container.append(searchField, searchButton, $('<p />'), dateButton, ratingButton, imagesContainer);
+		relativeContainer.append(searchField, searchButton, $('<p />'), dateButton, ratingButton, imagesContainer);
 		var opacityScreen = $('<div>')
 								.addClass('stavklass-opacity')
 								.append(container);

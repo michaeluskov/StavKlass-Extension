@@ -23,7 +23,12 @@
 	margin: auto;
 	cursor: default;
 	border-radius: 10px;
-	overflow: auto;
+}
+
+.stavklass-relativecontainer {
+	position: relative;
+	height: 100%;
+	width: 100%;
 }
 
 .stavklass-searchfield {
@@ -51,6 +56,8 @@
 
 .stavklass-imagescontainer {
 	padding-top: 10px;
+	height: 80%;
+	overflow: auto;
 }
 
 .autocomplete-suggestions {
