@@ -214,6 +214,7 @@ var initAfterLoad = function() {
 };
 
 jQuery(window).load(function() {
-	initAfterLoad();
 });
+
+initAfterLoad();
 
