@@ -130,8 +130,8 @@
 						.addClass('stavklass-image')
 						.attr('src',el.link)
 						.click(function() {
-							this.__successFunction(el.link);
 							this.__closeFunction();
+							this.__successFunction(el.link);
 						}.bind(this));
 			var rating = $('<span>')
 							.addClass('stavklass-rating')
