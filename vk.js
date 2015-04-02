@@ -27,6 +27,10 @@ var KlassButton = function(menuSelectHandler) {
 
 	this.__menuSelectHandler = menuSelectHandler;
 	
+	this.__preventEventsBubblingFunction = function(e) {
+		e.stopPropagation();
+	};
+	
 	this.__button = $('<a class="add_media_item"	\
 								style="background-image: url(http://vk.com/images/icons/attach_icons.png?6);  \
 								background-position: 3px 3px;"><nobr>СТАВЬ КЛАСС)))</nobr></a>')
@@ -35,9 +39,14 @@ var KlassButton = function(menuSelectHandler) {
 	this.__buttonClick = function() {
 		console.log(this.__menuSelectHandler.getState());
 		var stavklassobject = new StavKlassObject(this.__menuSelectHandler.getState().setPicFunction,
-												  function() {$('#stavklassobject').remove()});
+												  function() {
+													$('#stavklassobject').remove();
+												  });
 		stavklassobject.createNodes();
 		$(document.body).append(stavklassobject.getRootNode());
+		$('.stavklass-searchfield').focus();
+		$('#stavklassobject').on('keydown click',
+								this.__preventEventsBubblingFunction);
 	};
 								
 								
