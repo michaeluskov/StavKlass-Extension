@@ -1,7 +1,7 @@
 ﻿{
 	"manifest_version": 2,
 	"name": "СТАВЬ КЛАСС!",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"icons": {"128": "stavklass-icon128.png"},
 	
 	 "content_scripts": [
