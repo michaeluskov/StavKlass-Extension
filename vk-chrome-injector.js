@@ -4,13 +4,6 @@ function addScript(url) {
 	(document.head||document.documentElement).appendChild(s);
 }
 
-function addScriptIfJquery(url) {
-	if (typeof jQuery === undefined)
-		setTimeout(function() {addScriptIfJquery(url)}, 100);
-	else
-		addScript(url);
-}
-
 function addStylesheet(url) {
 	var s = document.createElement('link');
 	s.rel = 'stylesheet';
@@ -19,8 +12,7 @@ function addStylesheet(url) {
 }
 
 addScript('jquery.js');
-addScriptIfJquery('autocomplete.js');
-addScriptIfJquery('scrollock.js');
-addScriptIfJquery('stavklassobject.js');
-addScriptIfJquery('vk.js');
+addScript('autocomplete.js');
+addScript('stavklassobject.js');
+addScript('vk.js');
 addStylesheet('stavklass.css');
