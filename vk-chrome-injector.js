@@ -13,6 +13,7 @@ function addStylesheet(url) {
 
 addScript('jquery.js');
 addScript('autocomplete.js');
+addScript('scrollock.js');
 addScript('stavklassobject.js');
 addScript('vk.js');
 addStylesheet('stavklass.css');
