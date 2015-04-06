@@ -173,9 +173,21 @@ var MenuSelectHandler = function() {
 		}.bind(this),
 		fastim: function(el) {
 			this.__state = {type: 'fastim'};
+			this.__state.element = el;
 			this.__state.setPicFunction = function(url) {
-				console.log(url);
-			}
+				var curMedia;
+				var filtered = $.each(cur.addMedia, function(i, el) {
+					if (el._addMediaLink == this.__state.element) {
+						curMedia = el;
+						return false;
+					}
+				}.bind(this));
+				curMedia.checkURL(url);
+				window.onUploadDone = function(data) {
+					curMedia.chooseMedia(data[0], data[1], data[2], '', true);
+					curMedia.onCheckURLDone();
+				};
+			}.bind(this);
 		}.bind(this),
 		photo: function(el) {
 			this.__state = {type: 'photo'};
