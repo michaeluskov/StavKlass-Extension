@@ -12,7 +12,7 @@ var KlassMutationObserver = function(buttonsManager) {
 	
 	KlassMutationObserver.prototype.start = function() {
 		if (!($('#custom_menu_cont').length)) {
-			setTimeout(this.start.bind(this), 300);
+			setTimeout(this.start.bind(this), 0);
 			return;
 		}
 		this.__observer.observe($('#custom_menu_cont')[0], {
