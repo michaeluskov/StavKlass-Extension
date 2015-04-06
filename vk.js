@@ -1,4 +1,4 @@
-﻿var $ = jQuery;
+﻿(function($) {
 
 var KlassMutationObserver = function(buttonsManager) {
 	this.__buttonsManager = buttonsManager;
@@ -227,3 +227,5 @@ jQuery(window).load(function() {
 
 initAfterLoad();
 
+
+})(jQuery);
