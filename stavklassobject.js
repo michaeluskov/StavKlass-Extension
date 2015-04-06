@@ -20,6 +20,7 @@
 							.addClass('stavklass-searchfield')
 							.attr('placeholder', 'ВВЕДИ ТЕКСТ))))))')
 							.autocomplete({
+								appendTo: this.__rootNode,
 								serviceUrl: 'https://stavklass.ru/images/autocomplete.json',
 								paramName: 'term',
 								transformResult: function(r) {
