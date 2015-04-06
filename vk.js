@@ -95,7 +95,7 @@ var AttachMenuObserver = function(menuSelectHandler) {
 	}
 	
 	AttachMenuObserver.prototype.setEventHandlers = function(el) {
-		$(el).find('div').each(function(num, elem) {
+		$(el).find('div, a').each(function(num, elem) {
 			if (this.__menuSelectHandler.getElementType(elem)) {
 				$(elem).on("mouseover", function(e) {this.__menuSelectHandler.setState(e.target);}.bind(this));
 			}
@@ -126,6 +126,9 @@ var MenuSelectHandler = function() {
 		},
 		im: function(el) {
 			return $(el).attr('id') == 'im_add_media';
+		},
+		fastim: function(el) {
+			return $(el).attr('class') == 'fc_tab_attach';
 		},
 		photo: function(el) {
 			return $(el).attr('id') == 'pv_add_media';
@@ -166,6 +169,12 @@ var MenuSelectHandler = function() {
 				inputElement.html(old+' '+url+'&nbsp;');
 				inputElement.focus();
 				inputElement[0].dispatchEvent(new Event('keyup'));
+			}
+		}.bind(this),
+		fastim: function(el) {
+			this.__state = {type: 'fastim'};
+			this.__state.setPicFunction = function(url) {
+				console.log(url);
 			}
 		}.bind(this),
 		photo: function(el) {
