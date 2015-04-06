@@ -55,8 +55,11 @@
 }
 
 .stavklass-imagescontainer {
-	padding-top: 10px;
-	max-height: 80%;
+	top: 111px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
 	overflow: auto;
 }
 
