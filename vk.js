@@ -41,6 +41,7 @@ var KlassButton = function(menuSelectHandler) {
 		var stavklassobject = new StavKlassObject(this.__menuSelectHandler.getState().setPicFunction,
 												  function() {
 													$('#stavklassobject').remove();
+													$('.autocomplete-suggestions').remove();
 												  });
 		stavklassobject.createNodes();
 		$(document.body).append(stavklassobject.getRootNode());
