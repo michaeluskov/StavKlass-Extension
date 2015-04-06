@@ -45,7 +45,7 @@ var KlassButton = function(menuSelectHandler) {
 		stavklassobject.createNodes();
 		$(document.body).append(stavklassobject.getRootNode());
 		$('.stavklass-searchfield').focus();
-		$('#stavklassobject').on('keydown click',
+		$('#stavklassobject').on('keydown mousedown',
 								this.__preventEventsBubblingFunction);
 	};
 								
