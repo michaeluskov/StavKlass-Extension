@@ -98,7 +98,7 @@ window.AttachMenuObserver = function(menuSelectHandler) {
 	AttachMenuObserver.prototype.setEventHandlers = function(el) {
 		$(el).find('div, a').each(function(num, elem) {
 			if (this.__menuSelectHandler.getElementType(elem)) {
-				$(elem).on("mouseover", function(e) {this.__menuSelectHandler.setState(e.target);}.bind(this));
+				$(elem).on("mousemove", function(e) {this.__menuSelectHandler.setState(e.target);}.bind(this));
 			}
 		}.bind(this));
 	}.bind(this);
