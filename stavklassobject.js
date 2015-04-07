@@ -1,4 +1,6 @@
-﻿var StavKlassObject = function(successFunction, closeFunction) {
+﻿(function($) {
+
+window.StavKlassObject = function(successFunction, closeFunction) {
 	
 	this.__successFunction = successFunction || function() {};
 	this.__closeFunction = closeFunction || function() {};
@@ -143,3 +145,5 @@
 	};
 
 };
+
+})(jQuery);

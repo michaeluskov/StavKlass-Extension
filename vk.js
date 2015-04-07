@@ -1,6 +1,6 @@
 ﻿(function($) {
 
-var KlassMutationObserver = function(buttonsManager) {
+window.KlassMutationObserver = function(buttonsManager) {
 	this.__buttonsManager = buttonsManager;
 	this.__MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 	
@@ -23,7 +23,7 @@ var KlassMutationObserver = function(buttonsManager) {
 	
 };
 
-var KlassButton = function(menuSelectHandler) {
+window.KlassButton = function(menuSelectHandler) {
 
 	this.__menuSelectHandler = menuSelectHandler;
 	
@@ -57,7 +57,7 @@ var KlassButton = function(menuSelectHandler) {
 	
 };
 
-var KlassButtonsManager = function(menuSelectHandler) {
+window.KlassButtonsManager = function(menuSelectHandler) {
 
 	this.__menuSelectHandler = menuSelectHandler;	
 	this.__klassButtons = {};
@@ -82,7 +82,7 @@ var KlassButtonsManager = function(menuSelectHandler) {
 
 };
 
-var AttachMenuObserver = function(menuSelectHandler) {
+window.AttachMenuObserver = function(menuSelectHandler) {
 	this.__menuSelectHandler = menuSelectHandler;
 	this.__MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 	
@@ -114,7 +114,7 @@ var AttachMenuObserver = function(menuSelectHandler) {
 	
 };
 
-var MenuSelectHandler = function() {
+window.MenuSelectHandler = function() {
 
 	this.__state = {};
 
@@ -233,7 +233,7 @@ var MenuSelectHandler = function() {
 };
 
 
-var initAfterLoad = function() {
+window.initAfterLoad = function() {
 	var menuSelectHandler = new MenuSelectHandler();
 	var buttonsManager = new KlassButtonsManager(menuSelectHandler);
 	var buttonsObserver = new KlassMutationObserver(buttonsManager);
