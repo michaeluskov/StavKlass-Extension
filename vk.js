@@ -42,6 +42,7 @@ window.KlassButton = function(menuSelectHandler) {
 												  function() {
 													$('#stavklassobject').remove();
 													$('.autocomplete-suggestions').remove();
+													document.body.onkeydown = undefined;
 												  });
 		stavklassobject.createNodes();
 		$(document.body).append(stavklassobject.getRootNode());
@@ -49,6 +50,11 @@ window.KlassButton = function(menuSelectHandler) {
 		$('.autocomplete-suggestions').scrollLock();
 		$('#stavklassobject, .autocomplete-suggestions').on('keydown keyup mousedown click',
 								this.__preventEventsBubblingFunction);
+		document.body.onkeydown = function(e) {
+												e.preventDefault(); 
+												e.stopPropagation(); 
+												return false;
+											};
 	};
 								
 								
