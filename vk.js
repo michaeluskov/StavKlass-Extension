@@ -46,7 +46,8 @@ window.KlassButton = function(menuSelectHandler) {
 		stavklassobject.createNodes();
 		$(document.body).append(stavklassobject.getRootNode());
 		$('.stavklass-searchfield').focus();
-		$('#stavklassobject, .autocomplete-suggestions').on('keydown mousedown click',
+		$('.autocomplete-suggestions').scrollLock();
+		$('#stavklassobject, .autocomplete-suggestions').on('keydown keyup mousedown click',
 								this.__preventEventsBubblingFunction);
 	};
 								
