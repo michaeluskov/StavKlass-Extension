@@ -99,7 +99,7 @@ window.AttachMenuObserver = function(menuSelectHandler) {
 	AttachMenuObserver.prototype.setEventHandlers = function(el) {
 		$(el).find('div, a').each(function(num, elem) {
 			if (this.__menuSelectHandler.getElementType(elem)) {
-				$(elem).on("mousemove", function(e) {this.__menuSelectHandler.setState(e.target);}.bind(this));
+				$(elem).on("mouseout", function(e) {this.__menuSelectHandler.setState(e.currentTarget);}.bind(this));
 			}
 		}.bind(this));
 	}.bind(this);
