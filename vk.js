@@ -32,7 +32,7 @@ window.KlassButton = function(menuSelectHandler) {
 	};
 	
 	this.__button = $('<a class="add_media_item"	\
-								style="background-image: url(http://vk.com/images/icons/attach_icons.png?6);  \
+								style="background-image: url(https://vk.com/images/icons/attach_icons.png?6);  \
 								background-position: 3px 3px;"><nobr>СТАВЬ КЛАСС)))</nobr></a>')
 					.click(function() {this.__buttonClick()}.bind(this));
 					
