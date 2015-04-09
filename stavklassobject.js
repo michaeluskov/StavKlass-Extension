@@ -15,7 +15,8 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 									e.stopPropagation();
 								});
 		var relativeContainer = $('<div>')
-								.addClass('stavklass-relativecontainer');
+								.addClass('stavklass-relativecontainer')
+								.scrollLock();
 		container.append(relativeContainer);
 		var searchField = $('<input type="text">')
 							.attr('id', 'stavklass-searchfield')
