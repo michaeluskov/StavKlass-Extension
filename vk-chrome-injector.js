@@ -1,7 +1,7 @@
 function addScript(url) {
 	var s = document.createElement('script');
 	s.src = chrome.extension.getURL(url);
-	(document.head||document.documentElement).appendChild(s);
+	(document.body||document.documentElement).appendChild(s);
 }
 
 function addStylesheet(url) {
