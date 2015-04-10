@@ -73,6 +73,7 @@
 	text-align: center;
 	font-size: 10px;
 	line-height: 20px;
+	overflow: hidden;
 }
 
 .autocomplete-suggestions {
