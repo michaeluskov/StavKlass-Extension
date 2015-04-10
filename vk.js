@@ -224,7 +224,7 @@ window.MenuSelectHandler = function() {
 			this.__state.setPicFunction = function(url) {
 				var inputElement = $('#like_share_text');
 				var old = inputElement.val();
-				inputElement.val(old+' '+url+'&nbsp;');
+				inputElement.val(old+' '+url+' ');
 				inputElement.focus();
 				inputElement[0].dispatchEvent(new Event('keyup'));
 			};
