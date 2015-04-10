@@ -7,6 +7,7 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 	this.__rootNode = undefined;
 	
 	this.__images = [];
+	this.__isLoading = false;
 	
 	StavKlassObject.prototype.createNodes = function() {
 		var container = $('<div>')
@@ -57,6 +58,11 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 							.addClass('stavklass-button')
 							.html('Самые рейтинговые')
 							.click(this.__setHighestRankedImages.bind(this));
+		var randomButton = $('<button>')
+							.attr('id', 'stavklass-randombutton')
+							.addClass('stavklass-button')
+							.html('Случайные')
+							.click(this.__setRandomImages.bind(this));
 		var imagesContainer = $('<div>')
 								.attr('id', 'stavklass-imagescontainer')
 								.addClass('stavklass-imagescontainer')
@@ -69,7 +75,7 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 						<a href="https://github.com/michaeluskov/StavKlass-Extension" target="_blank">Исходный код и прием сообщений о багах</a> | \
 						<a href="https://vk.com/michaeluskov" target="_blank">VK.com (тоже прием сообщений о багах)</a>\
 						');
-		relativeContainer.append(searchField, searchButton, $('<p />'), dateButton, ratingButton, imagesContainer, bottomRow);
+		relativeContainer.append(searchField, searchButton, $('<p />'), dateButton, ratingButton, randomButton, imagesContainer, bottomRow);
 		var opacityScreen = $('<div>')
 								.addClass('stavklass-opacity')
 								.append(container)
@@ -87,6 +93,9 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 	
 	
 	StavKlassObject.prototype.__enableLoading = function() {
+		if (this.__isLoading)
+			return;
+		this.__isLoading = !this.__isLoading;
 		var opacity = $('<div>').addClass('stavklass-loadingopacity');
 		var progress = $('<div>').addClass('stavklass-loadingprogress');
 		$(this.__rootNode).find('.stavklass-relativecontainer').append(opacity, progress);
@@ -94,6 +103,9 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 	};
 	
 	StavKlassObject.prototype.__disableLoading = function() {
+		if (!this.__isLoading)
+			return;
+		this.__isLoading = !this.__isLoading;
 		$(this.__rootNode).find('.stavklass-loadingopacity, .stavklass-loadingprogress').remove();
 	};
 	
@@ -126,6 +138,22 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 		$.getJSON('https://stavklass.ru/images.json',
 				 {order: 'rating'},
 				 function(data) {
+					this.__images = data;
+					this.__updateImages();
+					this.__disableLoading();
+				 }.bind(this)
+				 );
+	};
+	
+	StavKlassObject.prototype.__setRandomImages = function() {
+		this.__enableLoading();
+		var pageNum = Math.floor(Math.random() * (100 - 0 + 1)) + 0;
+		$.getJSON('https://stavklass.ru/images.json',
+				 {order: 'rating',
+				 page: pageNum},
+				 function(data) {
+					if (data.length == 0)
+						this.__setRandomImages();
 					this.__images = data;
 					this.__updateImages();
 					this.__disableLoading();
