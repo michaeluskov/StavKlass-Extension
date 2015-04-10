@@ -138,11 +138,14 @@ window.MenuSelectHandler = function() {
 		fastim: function(el) {
 			return $(el).attr('class') == 'fc_tab_attach';
 		},
-		photo: function(el) {
+		photo: function	(el) {
 			return $(el).attr('id') == 'pv_add_media';
 		},
 		video: function(el) {
 			return $(el).attr('id') == 'mv_add_media';
+		},
+		share: function(el) {
+			return $(el).attr('id') == 'like_share_add_media';
 		}
 	};
 	
@@ -215,7 +218,17 @@ window.MenuSelectHandler = function() {
 				inputElement.html(old+' '+url+'&nbsp;');
 				inputElement.focus();
 				inputElement[0].dispatchEvent(new Event('keyup'));
-			}
+			};
+		}.bind(this),
+		share: function(el) {
+			this.__state = {type: 'share'};
+			this.__state.setPicFunction = function(url) {
+				var inputElement = $('#like_share_text');
+				var old = inputElement.val();
+				inputElement.val(old+' '+url+'&nbsp;');
+				inputElement.focus();
+				inputElement[0].dispatchEvent(new Event('keyup'));
+			};
 		}.bind(this)
 	};
 
