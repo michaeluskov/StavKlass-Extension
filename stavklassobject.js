@@ -83,6 +83,7 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 		var opacity = $('<div>').addClass('stavklass-loadingopacity');
 		var progress = $('<div>').addClass('stavklass-loadingprogress');
 		$(this.__rootNode).find('.stavklass-relativecontainer').append(opacity, progress);
+		$(this.__rootNode).find('.stavklass-searchfield').autocomplete().hide();
 	};
 	
 	StavKlassObject.prototype.__disableLoading = function() {
