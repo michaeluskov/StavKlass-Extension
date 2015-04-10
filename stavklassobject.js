@@ -23,6 +23,8 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 							.addClass('stavklass-searchfield')
 							.attr('placeholder', 'ВВЕДИ ТЕКСТ))))))')
 							.autocomplete({
+								appendTo: relativeContainer,
+								forceFixPosition: true,
 								serviceUrl: 'https://stavklass.ru/images/autocomplete.json',
 								paramName: 'term',
 								transformResult: function(r) {
