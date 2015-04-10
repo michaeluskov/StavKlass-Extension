@@ -1,4 +1,9 @@
-﻿.stavklass-opacity {
+﻿.stavklass-attachicon {
+	background-image: url(stavklass-attachicon.png); 
+	background-position: 3px 3px;
+}
+
+.stavklass-opacity {
 	position: fixed;
 	top: 0;
 	left: 0;

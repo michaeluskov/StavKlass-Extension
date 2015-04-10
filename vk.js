@@ -31,9 +31,8 @@ window.KlassButton = function(menuSelectHandler) {
 		e.stopPropagation();
 	};
 	
-	this.__button = $('<a class="add_media_item"	\
-								style="background-image: url(https://vk.com/images/icons/attach_icons.png?6);  \
-								background-position: 3px 3px;"><nobr>СТАВЬ КЛАСС)))</nobr></a>')
+	this.__button = $('<a class="add_media_item stavklass-attachicon"	\
+								><nobr>СТАВЬ КЛАСС)))</nobr></a>')
 					.click(function() {this.__buttonClick()}.bind(this));
 					
 	this.__buttonClick = function() {
