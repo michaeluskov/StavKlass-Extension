@@ -59,9 +59,20 @@
 	top: 111px;
 	left: 0;
 	right: 0;
-	bottom: 0;
+	bottom: 22px;
 	position: absolute;
 	overflow: auto;
+}
+
+.stavklass-bottomrow {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 20px;
+	text-align: center;
+	font-size: 10px;
+	line-height: 20px;
 }
 
 .autocomplete-suggestions {
