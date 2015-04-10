@@ -79,6 +79,7 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 							.addClass('stavklass-root')
 							.append(opacityScreen)
 							.click(function() {this.__closeFunction()}.bind(this));
+		this.__setRandomPic();
 	};
 	
 	StavKlassObject.prototype.getRootNode = function() {
@@ -131,6 +132,11 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 					this.__disableLoading();
 				 }.bind(this)
 				 );
+	};
+	
+	StavKlassObject.prototype.__setRandomPic = function() {
+		this.__images = [{link: 'http://stavklass.ru/images/random.jpg?'+new Date().getTime(), rating: 'Не скажу, это случайная картинка'}];
+		this.__updateImages();
 	};
 	
 	StavKlassObject.prototype.__updateImages = function() {
