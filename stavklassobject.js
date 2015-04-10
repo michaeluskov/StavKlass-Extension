@@ -64,10 +64,10 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 								.on('mousewheel', function(e) {e.stopPropagation()});
 		var bottomRow = $('<div>')
 						.addClass('stavklass-bottomrow')
-						.html('<a href="http://stavklass.ru" target="blank">http://stavklass.ru</a> | \
-						Вдохновлен <a href="http://vk.com/ok_filial" target="blank">филиалом Одноклассников</a> | \
-						<a href="https://github.com/michaeluskov/StavKlass-Extension" target="blank">Исходный код и прием сообщений о багах</a> | \
-						<a href="https://vk.com/michaeluskov" target="blank">VK.com (тоже прием сообщений о багах)</a>\
+						.html('<a href="http://stavklass.ru" target="_blank">http://stavklass.ru</a> | \
+						Вдохновлен <a href="http://vk.com/ok_filial" target="_blank">филиалом Одноклассников</a> | \
+						<a href="https://github.com/michaeluskov/StavKlass-Extension" target="_blank">Исходный код и прием сообщений о багах</a> | \
+						<a href="https://vk.com/michaeluskov" target="_blank">VK.com (тоже прием сообщений о багах)</a>\
 						');
 		relativeContainer.append(searchField, searchButton, $('<p />'), dateButton, ratingButton, imagesContainer, bottomRow);
 		var opacityScreen = $('<div>')
