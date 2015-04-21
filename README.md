@@ -1,6 +1,10 @@
 СТАВЬ КЛАСС!
 =================
 
+[![](http://1.bp.blogspot.com/-QWWGTbEKlUs/TxcNMknZOuI/AAAAAAAACG4/sDcQPjZUOPo/s1600/chrome.png)](https://chrome.google.com/webstore/detail/%D1%81%D1%82%D0%B0%D0%B2%D1%8C-%D0%BA%D0%BB%D0%B0%D1%81%D1%81/nbbbonjpahkkjibjggbggmkfhlicbgjj)
+
+
+
 
 Что это?
 --------
@@ -36,5 +40,5 @@ Cпасибо Максиму Малинникову за графон.
 
 А его не будет.
 
-![Молочник](http://i.imgur.com/G1xBrlAm.jpg)
+![enter image description here](http://i.imgur.com/G1xBrlAm.jpg)
 
