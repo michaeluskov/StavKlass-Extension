@@ -145,6 +145,9 @@ window.MenuSelectHandler = function() {
 		},
 		share: function(el) {
 			return $(el).attr('id') == 'like_share_add_media';
+		},
+		edit: function(el) {
+			return $(el).attr('id') == 'wpe_add_media';
 		}
 	};
 	
@@ -225,6 +228,16 @@ window.MenuSelectHandler = function() {
 				var inputElement = $('#like_share_text');
 				var old = inputElement.val();
 				inputElement.val(old+' '+url+' ');
+				inputElement.focus();
+				inputElement[0].dispatchEvent(new Event('keyup'));
+			};
+		}.bind(this),
+		edit: function(el) {
+			this.__state = {type: 'edit'};
+			this.__state.setPicFunction = function(url) {
+				var inputElement = $('#wpe_text');
+				var old = inputElement.html();
+				inputElement.html(old+' '+url+'&nbsp;');
 				inputElement.focus();
 				inputElement[0].dispatchEvent(new Event('keyup'));
 			};
