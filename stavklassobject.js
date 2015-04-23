@@ -70,7 +70,8 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 								.on('mousewheel', function(e) {e.stopPropagation()});
 		var bottomRow = $('<div>')
 						.addClass('stavklass-bottomrow')
-						.html('<a href="http://stavklass.ru" target="_blank">stavklass.ru</a> | \
+						.html('<a href="https://github.com/michaeluskov/StavKlass-Extension#%D0%90-%D0%B3%D0%B4%D0%B5-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD" target="_blank">ГДЕ ДИЗАЙН???!!</a> | \
+						<a href="http://stavklass.ru" target="_blank">stavklass.ru</a> | \
 						Вдохновлен <a href="http://vk.com/ok_filial" target="_blank">филиалом Одноклассников</a> | \
 						<a href="https://github.com/michaeluskov/StavKlass-Extension" target="_blank">Исходный код и прием сообщений о багах</a> | \
 						<a href="https://vk.com/michaeluskov" target="_blank">VK.com (тоже прием сообщений о багах)</a>\
