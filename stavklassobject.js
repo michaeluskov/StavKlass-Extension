@@ -26,6 +26,7 @@ window.StavKlassObject = function(successFunction, closeFunction) {
 							.autocomplete({
 								appendTo: relativeContainer,
 								forceFixPosition: true,
+								triggerSelectOnValidInput: false,
 								serviceUrl: 'https://stavklass.ru/images/autocomplete.json',
 								paramName: 'term',
 								transformResult: function(r) {
